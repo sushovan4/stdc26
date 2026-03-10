@@ -2,9 +2,7 @@
 title: "Geomtric Latschev's Theorem"
 title-slide-attributes: 
   data-background-image: "chaya.png"
-  data-background-opacity: "0.5"
-  data-background-position: "bottom right"
-  data-background-size: "30%"
+  data-background-opacity: "0.2"
 subtitle: <green>Spring Topology, 2026</green>
 author: "<b>Sushovan Majhi</b>, *George Washington University, DC*"
 fig-cap-location: bottom
@@ -23,7 +21,7 @@ editor:
 html-math-method: mathml
 ---
 
-# Finite Reconstruction Problem {background-image="chaya.png" background-opacity="0.1"}
+# Finite Reconstruction Problem {background-image="chaya.png" background-opacity="0.03"}
 
 
 - <green>**Shape**</green>: A *Shape* is modeled as a metric space $(X,d_X)$
@@ -35,12 +33,12 @@ html-math-method: mathml
    
 - <green>**Goal**</green>: Develop algorithms to recover the homotopy-type and geometry of $X$ from $S$ with guarantees.
   
-## Reconstruction via Vietoris<green>--</green>Rips
+## Reconstruction via Vietoris<green>--</green>Rips {.smaller}
 
 ::: {.columns}
 
 :::{.column width="65%" }
-
+- Look at sample at scale $\beta$
 - Computationally efficient
 - Data dimension agnostic---unlike the Čech complex or $\alpha$-complex
 
@@ -156,11 +154,11 @@ $$ for some $0<\xi<1/14$. Then, $\mathcal R_\beta(S)\simeq M$.
 - $CAT(\kappa)$ Spaces [<code>ArXiv:2406.04259</code>, @2406.04259]
 
 
-# Geometric <green>Reconstruction</green>Theorem {background-image="drawing.png" background-opacity="0.3" }
+# Geometric <green>Reconstruction</green>Theorem {background-image="chaya.png" background-opacity="0.03"}
 
 - <green>What if</green>: both $X\subset\mathbb R^N$ and $S\subset\mathbb R^N$
 - <green>**Closeness**</green>: small <green>Hausdorff</green> distance $d_{\mathrm H}(X, S)$
-- <green>Goal</green>: construct <red>$\hat{\mathcal G}\subset\mathbb R^N$</red> from samples so that 
+- <green>Goal</green>: construct <red>$\hat X\subset\mathbb R^N$</red> from samples so that 
     - $\hat{X}\simeq X$ & $d_H(\hat{X}, X)$ is small
 - Vietoris--Rips complexes are <red>abstract</red>, hence contain only topological information
 
@@ -235,8 +233,9 @@ If $S\subset \mathbb R^2$ and $d_H(\mathcal G, S)<\tfrac{1}{2}\xi\varepsilon$, t
 Moreover, <green>$d_H(\mathcal S(\mathcal R_\beta^\varepsilon(S)),\mathcal G)<\left(\beta+\frac{1}{2}\xi\varepsilon\right)$</green>. 
 :::
 
+- <green>$\mathcal R^\epsilon_\beta(S)$</green>: Non-Euclidean Vietoris--Rips
 - <green>$\Theta\in(0,1)$</green>: depends on the angles between tangents of edges at the graph vertices
-- <green>$\Delta(G)$</green>: *Shadow radius* positive number for graphs with smooth edges
+- <green>$\Delta(\mathcal G)$</green>: *Shadow radius* positive number for graphs with smooth edges
 
 ## A Sufficient Condition for Faithfulness {.smaller}
 
@@ -244,7 +243,7 @@ Moreover, <green>$d_H(\mathcal S(\mathcal R_\beta^\varepsilon(S)),\mathcal G)<\l
 
 :::{.callout-tip icon="false"}
 ## Apex Theorem
-Let $\mathcal K$ be a simiplicial complex with vertices in $\mathbb R^N$ with the apex condition. Then, the shadow projection $p$ is a homotopy equivalence.
+Let $\mathcal K$ be a *flag* complex with vertices in $\mathbb R^N$ with the apex condition. Then, the shadow projection $p$ is a homotopy equivalence.
 :::
 
 ## <green>Submanifold</green> Reconstruction using Shadow {.smaller}
@@ -252,15 +251,26 @@ Let $\mathcal K$ be a simiplicial complex with vertices in $\mathbb R^N$ with th
 
 :::{.callout-tip icon="false"}
 ## Knot-Type Reconstruction
-Let $\mathcal K$ be a simiplicial complex with vertices in $\mathbb R^N$ with the apex condition. Then, the shadow projection $p$ is a homotopy equivalence.
+Let $M\subset\mathbb R^N$ be a knot with reach $\tau(M)$. Let $S\subset M$ be a finite subset and $\beta>0$ a number such that 
+$$
+\frac{1}{\zeta}d_{\mathrm H}(M,S)<\beta\leq\frac{3(1+2\zeta)(1-14\zeta)}{8(1-2\zeta)^2}\tau(M)
+$$ 
+for some $0<\zeta<1/14$. Then, the shadow $\mathcal S(\mathcal R_\beta(S))$ is homotopy equivalent to $M$.
+
+Moreover, the Hausdorff distance $d_{\mathrm H}(\mathcal S(\mathcal R_\beta(S)),M)<\beta+\zeta$.
 :::
 
+- <green>No separation needed</green>: Delaunay-based methods require a strong separation condition for $S$
+  
+- <red>Noiseless case</red>: What about $S$ being *near* $M$? 
+- <red>General manifolds</red>: What about higher-dimensional manifolds? 
 
 # Future Directions 
 
-    - *in preparation* with <green>Kazuhiro Kawamura</green> & <green>Atish Mitra</green>
-- Use <green>discrete Morse theory</green> to perform *organized collapses* of higher dimensional simplices of shadow for homeomorphic reconstruction
+- Apex paper *in preparation* with <green>Kazuhiro Kawamura</green> & <green>Atish Mitra</green>
 
+- Is the apex condition also necessary for shadow project to be a homotopy eqivalance?
+  
 - <green>Submanifold reconstruction</green> via Vietoris--Rips shadow
 
 ## References {background-image="drawing.png" background-opacity="0.3" style="font-size: 0.6em"}

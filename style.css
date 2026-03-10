@@ -10,6 +10,7 @@ body, h1, h2, h3, p, span, li, ol, div {
     text-align: center;
 }
 
+
 h2 {
     font-size: 1.5em!important;
 }
@@ -27,14 +28,8 @@ red {
 .subtitle {
     font-style: italic;
 }
-.title .pref {
-    display: inline-block;
-    position: absolute;
-    transform: translate(-10%, -55%);
-    font-style: italic;
-    color: #3be57f;
-    font-size: 0.6em;
-    font-family: cursive;
+h1 .title{
+    font-size: 0.6em!important;
 }
 #refs {
     font-size: 1em!important;
