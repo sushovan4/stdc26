@@ -10,6 +10,16 @@ body, h1, h2, h3, p, span, li, ol, div {
     text-align: center;
 }
 
+/* 1. Make all fragments visible but dimmed (30% opacity) by default */
+.reveal .slides section .fragment {
+  opacity: 0.1;
+  visibility: inherit;
+}
+
+/* 2. Make the current or already-passed fragments fully opaque */
+.reveal .slides section .fragment.visible {
+  opacity: 1;
+}
 
 h2 {
     font-size: 1.5em!important;
