@@ -242,7 +242,7 @@ Moreover, the Hausdorff distance $d_{\mathrm H}(\mathcal S(\mathcal R_\beta(S)),
 
 # Future Directions 
 
-- <red>Noiseless case</red>: What about $S$ being *near* $M$? We solved for $N=2$
+- <red>Noisy</red>: What about $S$ being *near* $M$? We solved for $N=2$
 - <red>General manifolds</red>: What about higher-dimensional manifolds? 
 
 - Is the apex condition also necessary for shadow project to be a homotopy eqivalance?
